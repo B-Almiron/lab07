@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Ingresar datos a la base de datos</h1>
+  <form method="post" action="/juegos">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required><br><br>
+    <label>desarrollo:</label>
+    <input type="text" name="desarrollo" required><br><br>
+    <label>precio:</label>
+    <input type="text" name="precio" required><br><br>
+    <button type="submit">Guardar</button>
+  </form>
+
+  <h1>Tabla de usuarios</h1>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>desarrollo</th>
+        <th>precio</th>
+      </tr>
+    <% juegos.forEach((juegos) => { %>
+      <tr>
+        <th><%= juegos.nombre %></th>
+        <th><%= juegos.desarrollo %></th>
+        <th><%= juegos.precio %></th>
+      </tr>
+    <% }) %>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</body>
+</html>
